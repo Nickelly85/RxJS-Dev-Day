@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+@theme {
+  --color-havelock-blue: oklch(63.147% 0.13252 255.48);
+  --color-havelock-blue-50: oklch(92.699% 0.04925 191.62);
+  --color-havelock-blue-100: oklch(91.458% 0.0558 196.22);
+  --color-havelock-blue-200: oklch(87.552% 0.06527 205.75);
+  --color-havelock-blue-300: oklch(82.76% 0.07405 216.96);
+  --color-havelock-blue-400: oklch(76.9% 0.08669 232.23);
+  --color-havelock-blue-500: oklch(70.336% 0.10561 245.23);
+  --color-havelock-blue-600: oklch(63.147% 0.13252 255.48);
+  --color-havelock-blue-700: oklch(55.14% 0.17054 263.15);
+  --color-havelock-blue-800: oklch(47.584% 0.19709 267.11);
+  --color-havelock-blue-900: oklch(41.212% 0.19862 269.84);
+  --color-havelock-blue-950: oklch(38.281% 0.19669 271.05);
+
+  --color-driftwood: oklch(64.929% 0.09714 64.647);
+  --color-driftwood-50: oklch(87.837% 0.03034 52.676);
+  --color-driftwood-100: oklch(85.561% 0.03571 54.738);
+  --color-driftwood-200: oklch(81.177% 0.04857 55.603);
+  --color-driftwood-300: oklch(77.083% 0.06057 60.01);
+  --color-driftwood-400: oklch(72.789% 0.07283 61.359);
+  --color-driftwood-500: oklch(68.697% 0.0849 63.226);
+  --color-driftwood-600: oklch(64.929% 0.09714 64.647);
+  --color-driftwood-700: oklch(59.907% 0.09058 67.36);
+  --color-driftwood-800: oklch(54.382% 0.08004 69.315);
+  --color-driftwood-900: oklch(48.705% 0.07022 72.59);
+  --color-driftwood-950: oklch(45.596% 0.06462 72.674);
+}
+
+html {
+  @apply h-screen;
+}
