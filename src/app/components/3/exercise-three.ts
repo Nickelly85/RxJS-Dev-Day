@@ -2,8 +2,6 @@ import {Component, DestroyRef, OnInit} from '@angular/core';
 import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {UserCard} from '../user-card/user-card';
 import {User} from '../../model/User';
-import {debounceTime, distinctUntilChanged, map, startWith, switchMap} from 'rxjs';
-import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
 import {UserService} from '../../services/user.service';
 
 @Component({
@@ -23,16 +21,6 @@ export class ExerciseThree implements OnInit {
   }
 
   ngOnInit(): void {
-    this.inputFormControl.valueChanges.pipe(
-      startWith(''),
-      debounceTime(300),
-      distinctUntilChanged(),
-      switchMap(value => this.userService.getUsers().pipe(
-        map(users => users.filter(user => [user.firstName, user.lastName].join(' ').toLowerCase().includes(value ? value.toLowerCase() : '')))
-      )),
-      takeUntilDestroyed(this.destroyRef)
-    ).subscribe(users => {
-      this.users = users
-    })
+
   }
 }

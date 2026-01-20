@@ -1,14 +1,13 @@
 <div class="flex flex-col pt-2 p-2 w-full h-full">
   <div class="flex flex-row justify-end w-full gap-x-2">
     <button (click)="loadUsers()"
-            [disabled]="loading$ | async"
             class="w-full border border-gray-500 p-2 rounded-md bg-blue-300 transition-all ease-in-out duration300
           enabled:hover:bg-blue-400
           enabled:cursor-pointer
           enabled:hover:shadow-md
           disabled:cursor-not-allowed
           disabled:opacity-50">
-      @if (!(loading$ | async)) {
+      @if (true) {
         <p class="text-black">
           Load Users
         </p>
@@ -21,9 +20,8 @@
   </div>
   <div class="flex grow w-full mt-4 rounded-md border border-gray-500">
     <div class="grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 p-4 gap-2 w-full">
-      @for (user of users$ | async; track user.id) {
-        <app-user-card [user]="user"/>
-      }
+<!--      Add for loop here with async pipe and pass users to app-user-card component-->
+      <app-user-card [user]="null"/>
     </div>
   </div>
 </div>

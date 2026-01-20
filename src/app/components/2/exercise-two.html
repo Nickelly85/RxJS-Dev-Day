@@ -1,14 +1,13 @@
 <div class="flex flex-col pt-2 p-2 w-full h-full">
   <div class="flex flex-row w-full gap-x-2">
     <button (click)="loadUser()"
-            [disabled]="loading$ | async"
             class="w-full border border-gray-500 p-2 rounded-md bg-blue-300 transition-all ease-in-out duration300
           enabled:hover:bg-blue-400
           enabled:cursor-pointer
           enabled:hover:shadow-md
           disabled:cursor-not-allowed
           disabled:opacity-50">
-      @if (!(loading$ | async)) {
+      @if (true) {
         <p class="text-black">
           Load Users
         </p>
