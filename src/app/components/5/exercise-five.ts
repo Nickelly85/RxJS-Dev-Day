@@ -1,7 +1,7 @@
 import {Component, DestroyRef, OnInit} from '@angular/core';
 import {UserCard} from "../user-card/user-card";
 import {User} from '../../model/User';
-import {filter, forkJoin, fromEvent, map, Subscription, switchMap, takeUntil, timer} from 'rxjs';
+import {filter, forkJoin, fromEvent, map, mergeMap, Subscription, switchMap, takeUntil, timer} from 'rxjs';
 import {UserService} from '../../services/user.service';
 import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
 
@@ -27,7 +27,7 @@ export class ExerciseFive implements OnInit {
       switchMap(() =>
       timer(300).pipe(
         takeUntil(this.dblclicks$),
-        switchMap(() => forkJoin({
+        mergeMap(() => forkJoin({
           random: this.userService.getRandomUsers(),
           users: this.userService.getUsers()
         }))
